@@ -57,3 +57,30 @@ return cell;
 //tableView中有多少个分组
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 
+//添加编辑按钮，可删除tableView中所选择的行
+//首先是按钮事件
+-(void)buttonDown
+{
+    static int i=0;//此处设置Bool变量，这里是另外一种原始方法
+    if (i%2) {
+        [self.myTableView setEditing:NO animated:YES];
+    }
+    else{
+        [self.myTableView setEditing:YES animated:YES];//设置表格可编辑属性
+    }
+    i++;
+}
+//删除行
+//UITableViewRowAnimationTop为删除动画效果
+//删除显示内容数组里的对象，并把选中行标的行也删除掉
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//还有其他分组的情况下
+    if (indexPath.section == 0) {
+        [self.array removeObjectAtIndex:indexPath.row];
+    }
+    else{
+        [self.secondArray removeObjectAtIndex:indexPath.row];
+    }
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+}
