@@ -7,6 +7,9 @@ self.label = [[UILabel alloc]initWithFrame:CGRectMake(x, y, weight, hight)];
 //或者
 UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(x, y, weight, hight)];
 
+//设置位置
+[self.label setFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)];
+
 //设置label上的文本
 self.label.text = @"Orz";
 
@@ -19,4 +22,12 @@ self.label.textAlignment = UITextAlignmentCenter;
 
 //设置label上文本的字形及字号
 [self.label setFont:[UIFont boldSystemFontOfSize:40]];
-[self.view addSubview:self.labelTitle];
+
+//设置label上文本颜色
+self.label.textColor = [UIColor grayColor];
+
+//设置label背景色
+self.label.backgroundColor = [UIColor clearColor];
+
+//显示在当前视图上
+[self.view addSubview:self.label];
