@@ -1,0 +1,22 @@
+//声明
+@property(strong,nonatomic)UILabel * label;
+
+//属性
+//初始化，并包含坐标
+self.label = [[UILabel alloc]initWithFrame:CGRectMake(x, y, weight, hight)];
+//或者
+UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(x, y, weight, hight)];
+
+//设置label上的文本
+self.label.text = @"Orz";
+
+//设置label上的文本位置
+//0=居左；1=居中；2=居右
+self.labelTitle.textAlignment = 1;
+//或者
+//UITextAlignmentCenter居中；UITextAlignmentLeft居左；UITextAlignmentRight居右
+self.label.textAlignment = UITextAlignmentCenter;
+
+//设置label上文本的字形及字号
+[self.label setFont:[UIFont boldSystemFontOfSize:40]];
+[self.view addSubview:self.labelTitle];
