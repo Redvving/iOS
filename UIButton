@@ -1,0 +1,25 @@
+//声明
+@property(strong,nonatomic)UIButton * button;
+
+
+//初始化
+//UIButtonTypeCustom为自定义类型
+UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+
+//设置位置
+[button setFrame:CGRectMake(x, y, weight, hight)];
+
+//添加按钮背景图片
+//UIControlStateNormal为正常情况下；UIControlStateHighligh为点击后显示
+[button setBackgroundImage:[UIImage imageNamed:@"icon_new"] forState:UIControlStateNormal];
+
+//在按钮上继续添加图片
+[button setImage:<#(UIImage *)#> forState:<#(UIControlState)#>]；
+
+//添加单击事件
+//goToVC为自定义方法
+//UIControlEventTouchUpInside表示点击按下
+[button addTarget:self action:@selector(goToVC) forControlEvents:UIControlEventTouchUpInside];
+
+//添加到当前视图上
+[self addSubview:button];
