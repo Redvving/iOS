@@ -1,0 +1,6 @@
+//NSString转NSInteger
+//intValue;floatValue;doubleValue
+int a = [(NSString*) intValue];
+
+//NSInteger转NSString
+NSString * s = [NSString stringWithFomat:@"%i",a];
