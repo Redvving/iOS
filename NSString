@@ -9,7 +9,6 @@ string = @"This is a String!";
 NSString * string = [[NSString alloc] initWithString:@"This is a String!"];
 
 //4、用C创建字符串:initWithCString方法
-
 char * Cstring = "This is a String!";
 NSString * string = [[NSString alloc] initWithCString:Cstring];
 
@@ -36,7 +35,6 @@ if([string1 isEqualToString:string2])
 }
  
 //9、compare方法(comparer返回的三种值)    
-//
 NSString * string01 = @"This is a String!";
 NSString * string02 = @"This is a String!";    
 
@@ -55,7 +53,6 @@ BOOL result = [string1 caseInsensitiveCompare:string2] == NSOrderedSame;    //NS
 BOOL result = [astring1 compare:astring2 options:NSCaseInsensitiveSearch | NSNumericSearch] == NSOrderedSame;    //NSCaseInsensitiveSearch:不区分大小写比较 NSLiteralSearch:进行完全比较，区分大小写 NSNumericSearch:比较字符串的字符个数，而不是字符值。
 
 //11、输出大写或者小写字符串
-
 NSString * string1 = @"A String"; 
 NSString * string2 = @"String"; 
  
@@ -66,7 +63,6 @@ NSLog(@"string2:%@",[string2 lowercaseString]);//小写
 NSLog(@"string2:%@",[string2 capitalizedString]);//首字母大小
 
 //12、-rangeOfString: //查找字符串某处是否包含其它字符串
-
 NSString * string1 = @"This is a string";
 NSString * string2 = @"string";
  
@@ -121,7 +117,7 @@ NSString * absolutePath = [path stringByExpandingTildeInPath];
 NSLog(@"absolutePath:%@",absolutePath);
 NSLog(@"Path:%@",[absolutePath stringByAbbreviatingWithTildeInPath]);
 
-//25、文件扩展名
+//23、文件扩展名
 NSString * path = @"~/NSData.txt";
 //另一种获取文件扩展名
     NSString * extention = [[path stringByAppendingPathComponent:self.imageName] pathExtension];
